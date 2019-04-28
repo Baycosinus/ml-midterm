@@ -8,7 +8,7 @@ data_labels = []
 
 def main():
     global dataset
-    args = sys.argv
+    args = sys.argv # Reading dataset files as arguments
     if (len(args) > 2):
         print("Initializing dataset...")
         data_attributes = pd.read_csv(args[1])

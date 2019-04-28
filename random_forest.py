@@ -17,6 +17,7 @@ def process(attributes, labels):
     data_attributes = attributes
     data_labels = labels
 
+    # Split dataset as train (80%) and test (20%) datasets.
     attributes_train, attributes_test, labels_train, labels_test = train_test_split(data_attributes, data_labels, test_size=0.2, random_state = 0)
     ScaleData()
     result = train()
@@ -28,14 +29,18 @@ def ScaleData():
     attributes_train = sc.fit_transform(attributes_train)
     attributes_test = sc.fit_transform(attributes_test)
 
-def train():
+
+def train():  # Train the Extended Gradient Boost Classifier with Training dataset.
     global attributes_train, labels_train, attributes_test
     classifier = RandomForestClassifier(n_estimators=100)
     classifier.fit(attributes_train, labels_train)
+
+    # Make predictions with test dataset
     label_predict = classifier.predict(attributes_test)
     return label_predict
 
-def print_report(label_predict):
+
+def print_report(label_predict):  # Print the accuracy.
     global labels_test
     #print(confusion_matrix(labels_test, label_predict))
     #print(classification_report(labels_test, label_predict))
