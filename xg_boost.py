@@ -22,7 +22,7 @@ def process(attributes, labels):
     # Split dataset as train (80%) and test (20%) datasets.
     attributes_train, attributes_test, labels_train, labels_test = train_test_split(data_attributes, data_labels, test_size=0.2, random_state=0)
 
-    # Train the Extended Gradient Boost Classifier with Training dataset. 
+    # Train the Gradient Boosted Trees Classifier with Training dataset. 
     model = XGBClassifier()
     model.fit(attributes_train, labels_train)
 

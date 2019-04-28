@@ -1,5 +1,5 @@
-# ml-midterm
-Machine Learning class midterm project.
+# Machine Learning Class Midterm Project
+Classifier with Random Forest and Gradient Boosted Trees algorithms.
 
 ## USAGE
     ```
